@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex">
+    <title>Instrução de Trabalho</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Conteúdo Principal -->
+    <div class="main-content">
+        <div class="lateral">
+                </div>
+            </div>       
+            <div class="search-container">
+                <input type="text" placeholder="Pesquisar..." id="search-bar">
+                <button class="search-button">
+                    <img src="https://cdn-icons-png.flaticon.com/512/622/622669.png" alt="Pesquisar" class="search-icon">
+                </button>
+            </div>
+        </div>
+        <div class="container">
+            <img src="https://res.cloudinary.com/dph0fqovo/image/upload/v1736210234/Estrat%C3%A9gica%20Engenharia/rrvuyifou9ikh1ypg0oy.png" alt="Logo do Meu Site" class="logo">        
+            <h1>Instruções de trabalho</h1>
+            <div>
+                <label for="areas">Área:</label>
+                <select id="areas" onchange="loadCargos()">
+                    <option value="">Selecione uma área:</option>
+                </select>
+            </div>
+            <div>
+                <label for="cargos">Cargo:</label>
+                <select id="cargos" onchange="loadProcessos()">
+                    <option value="">Selecione um cargo:</option>
+                </select>
+            </div>
+            <div>
+                <label for="processos">Processo desenhado:</label>
+                <select id="processos" onchange="loadDetalhes()">
+                    <option value="">Selecione um processo:</option>
+                </select>
+            </div>
+            <div id="detalhes" style="display: none;">
+                <h2>Detalhes do Processo:</h2>
+                <ul id="detalhes-list"></ul>
+            </div>
+            <div id="fluxograma" style="display: none;">
+                <img id="fluxograma-imagem" src="" alt="Fluxograma do Processo">
+            </div>
+        </div>
+    </div>
+
+    <!-- Contador de Processos -->
+    <div class="contador-container">
+        <div class="contador-title">Total de Processos:</div>
+        <div class="contador-number">171</div> <!-- Altere o número conforme necessário -->
+        <div class="contador-text">Processos cadastrados na plataforma</div>
+    </div>
+
+    <!-- Resultados da Pesquisa -->
+    <div id="results-container" class="results"></div>
+
+    <!-- Modal e Overlay -->
+    <div id="modal-overlay" class="modal-overlay" onclick="closeModal()"></div>
+
+    <div id="modal" class="modal">
+        <span onclick="closeModal()" style="float: right; cursor: pointer;"></span>
+        <h2>Detalhes do Processo</h2>
+        <p id="modal-description" style="color: white;"></p>
+    </div>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+</body>
+</html>
